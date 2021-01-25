@@ -30,15 +30,17 @@ class LoginPage extends Component {
     handleSubmit(event) {
         event.preventDefault();
         
-        if (!this.state.email) {
-            return this.setState({error: 'Email address required'});
+        if (this.state.email === "") {
+            this.setState({error: 'Email address required'});
+            console.log(this.state.error)
         }
 
-        if (!this.state.email) {
-            return this.setState({error: 'Password required'});
+        if (this.state.pass === "") {
+            this.setState({error: 'Password required'});
+            console.log(this.state.error)
         }
 
-        console.log("submitted", event.target)
+        console.log("submitted", this.state.email, this.state.pass, this.state.error)
     }
 
     render() {
